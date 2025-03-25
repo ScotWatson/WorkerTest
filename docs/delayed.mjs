@@ -4,3 +4,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 await new Promise((resolve) => { setTimeout(resolve, 1000); });
+
+export function hello() {}
+
+console.log("delay done");
