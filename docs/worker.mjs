@@ -5,6 +5,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 // import * as Imported from "delayed.mjs";
 
+await new Promise((resolve) => { setTimeout(resolve, 1000); });
+
 self.postMessage("module worker started");
 
 self.addEventListener("message", (evt) => {
