@@ -5,8 +5,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 import * as Main from "./main.mjs";
 
+console.log("classic start");
 const worker = new Worker("worker.js");
 worker.postMessage("hello");
 worker.addEventListener("message", (evt) => {
+  console.log("classic respond");
+  console.log(evt.data);
+});
+
+console.log("module start");
+const worker = new Worker("worker.mjs", { type: "module" });
+worker.postMessage("hello");
+worker.addEventListener("message", (evt) => {
+  console.log("module respond");
   console.log(evt.data);
 });
