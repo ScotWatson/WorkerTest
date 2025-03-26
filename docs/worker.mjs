@@ -13,6 +13,11 @@ import * as Imported from "./delayed.mjs";
 // await new Promise((resolve) => { setTimeout(resolve, 1000); });
 // using await causes incoming message to be missed
 
+self.addEventListener("error", (evt) => {
+  console.log("There is an error inside your worker!");
+  console.log(evt);
+});
+
 self.postMessage("module worker started");
 
 Message.myQueue.addEventListener("message", (evt) => {
