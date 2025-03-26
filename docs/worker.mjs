@@ -26,3 +26,4 @@ Message.myQueue.addEventListener("message", (evt) => {
   console.log("message received");
   self.postMessage("Hello World!");
 });
+Message.myQueue.start();
