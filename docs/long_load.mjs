@@ -4,4 +4,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 const start = performance.now();
-while (performance.now() < start + 500) {}
+while (performance.now() < start + 5000) {}
