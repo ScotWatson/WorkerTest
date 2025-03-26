@@ -9,5 +9,5 @@ try {
   console.error(err);
 }
 
-export class MessageQueue;
+export MessageQueue;
 export const myQueue = new MessageQueue(self);
