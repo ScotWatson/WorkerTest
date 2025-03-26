@@ -9,5 +9,5 @@ try {
   console.error(err);
 }
 
-export MessageQueue;
+export const MessageQueue = self.MessageQueue;
 export const myQueue = new MessageQueue(self);
