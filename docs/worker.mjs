@@ -6,8 +6,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 // import * as Imported from "./long_load.mjs";
 // using import of even long loading modules (without await) allows incoming messages to be received
 
-import * as Message from "./message.mjs";
 import * as Imported from "./delayed.mjs";
+import * as Message from "./message.mjs";
 // using import of await causes incoming message to be missed
 
 // await new Promise((resolve) => { setTimeout(resolve, 1000); });
