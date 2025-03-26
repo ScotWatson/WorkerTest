@@ -20,6 +20,8 @@ self.addEventListener("error", (evt) => {
 
 self.postMessage("module worker started");
 
+console.log(Message.myQueue);
+
 Message.myQueue.addEventListener("message", (evt) => {
   self.postMessage("Hello World!");
 });
