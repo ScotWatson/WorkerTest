@@ -12,10 +12,8 @@ self.addEventListener("error", (evt) => {
 
 self.postMessage("module worker started");
 
-console.log(Message.myQueue);
-
-Message.myQueue.addEventListener("message", (evt) => {
+Main.port.addEventListener("message", (evt) => {
   console.log("message received");
-  self.postMessage("Hello World!");
+  Main.port.postMessage("Hello World!");
 });
-Message.myQueue.start();
+Main.port.start();
