@@ -8,4 +8,4 @@ export * as Imported from "./delayed.mjs";
 
 // Allows starting and stopping the main port
 // The port provided by WHATWG does not provide this capability.
-export port = new MessageQueue(self);
+export const port = new MessageQueue(self);
