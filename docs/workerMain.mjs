@@ -4,8 +4,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 import MessageQueue from "https://scotwatson.github.io/WebCommon/MessageQueue@20250212.mjs";
-export * as Imported from "./delayed.mjs";
 
 // Allows starting and stopping the main port
 // The port provided by WHATWG does not provide this capability.
 export const port = new MessageQueue(self);
+
+export * as Imported from "./delayed.mjs";
