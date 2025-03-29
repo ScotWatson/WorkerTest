@@ -31,8 +31,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       window.addEventListener("message", () => {
         console.log(Date.now(), "Receive Message");
       });
+      console.log(Date.now(), "start parse loop");
       const start = performance.now();
       while (performance.now() < start + 2000) {}
+      console.log(Date.now(), "end parse loop");
     </script>
   </body>
 </html>
