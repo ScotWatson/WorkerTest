@@ -23,9 +23,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <!-- This performs code that can only be performed safely before HTML parsing is complete. -->
     <script id="init" src="https://scotwatson.github.io/WebCommon/window-init@20250212.js"></script>
     <script>
-      console.log(performance.now(), "readyState: " + window.document.readyState);
+      console.log(Date.now(), "readyState: " + window.document.readyState);
       window.document.addEventListener("readystatechange", (evt) => {
-        console.log(performance.now(), "readyState: " + window.document.readyState);
+        console.log(Date.now(), "readyState: " + window.document.readyState);
+      });
+      window.addEventListener("message", () => {
+        console.log(Date.now(), "Receive Message");
       });
     </script>
   </body>
