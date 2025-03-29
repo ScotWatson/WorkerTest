@@ -8,7 +8,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     -->
   </head>
   <body>
-    <img src="https://scotwatson.github.io/UserInterfaceTest/map-of-the-world-2241469.png"></img>
+    <img id="map" src="https://scotwatson.github.io/UserInterfaceTest/map-of-the-world-2241469.png"></img>
     <script type="importmap">
       {
         "imports": {
@@ -25,6 +25,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <script id="init" src="https://scotwatson.github.io/WebCommon/window-init@20250212.js"></script>
     <script>
       console.log(Date.now(), "readyState: " + window.document.readyState);
+      const map = window.document.getElementById("map");
+      map.addEventListener("load", () => {
+        console.log(Date.now(), "map loaded");
+      });
       window.document.addEventListener("readystatechange", (evt) => {
         console.log(Date.now(), "readyState: " + window.document.readyState);
       });
