@@ -25,6 +25,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <script id="init" src="https://scotwatson.github.io/WebCommon/window-init@20250212.js"></script>
     <script>
       console.log(Date.now(), "readyState: " + window.document.readyState);
+      console.log(Date.now(), window.document.body);
       const map = window.document.getElementById("map");
       map.addEventListener("load", () => {
         console.log(Date.now(), "map loaded");
