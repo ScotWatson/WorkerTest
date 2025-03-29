@@ -25,23 +25,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <script id="init" src="https://scotwatson.github.io/WebCommon/window-init@20250212.js"></script>
     <script>
       console.log(Date.now(), "readyState: " + window.document.readyState);
-      console.log(Date.now(), "Step 1");
       window.document.addEventListener("readystatechange", (evt) => {
         console.log(Date.now(), "readyState: " + window.document.readyState);
       });
-      console.log(Date.now(), "Step 2");
       window.addEventListener("message", () => {
         console.log(Date.now(), "Receive Message");
       });
-      console.log(Date.now(), "Step 3");
       console.log(Date.now(), "start parse loop");
-      console.log(Date.now(), "Step 4");
       const start = performance.now();
-      console.log(Date.now(), "Step 5");
       while (performance.now() < start + 2000) {}
-      console.log(Date.now(), "Step 6");
       console.log(Date.now(), "end parse loop");
-      console.log(Date.now(), "Step 7");
     </script>
   </body>
 </html>
