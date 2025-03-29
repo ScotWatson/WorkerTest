@@ -25,14 +25,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <script id="init" src="https://scotwatson.github.io/WebCommon/window-init@20250212.js"></script>
     <script>
       console.log(Date.now(), "readyState: " + window.document.readyState);
-      console.log(Date.now(), window.document.body);
+      console.log(Date.now(), window.document.body.childNodes.length);
       const map = window.document.getElementById("map");
       map.addEventListener("load", () => {
         console.log(Date.now(), "map loaded");
       });
       window.document.addEventListener("readystatechange", (evt) => {
         console.log(Date.now(), "readyState: " + window.document.readyState);
-        console.log(window.document.body);
+        console.log(Date.now(), window.document.body.childNodes.length);
       });
       window.addEventListener("message", () => {
         console.log(Date.now(), "Receive Message");
@@ -41,7 +41,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       const start = performance.now();
       while (performance.now() < start + 2000) {}
       console.log(Date.now(), "end parse loop");
-      console.log(window.document.body);
+      console.log(Date.now(), window.document.body.childNodes.length);
     </script>
   </body>
 </html>
