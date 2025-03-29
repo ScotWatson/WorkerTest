@@ -31,6 +31,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       });
       window.document.addEventListener("readystatechange", (evt) => {
         console.log(Date.now(), "readyState: " + window.document.readyState);
+        console.log(window.document.body);
       });
       window.addEventListener("message", () => {
         console.log(Date.now(), "Receive Message");
@@ -39,6 +40,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       const start = performance.now();
       while (performance.now() < start + 2000) {}
       console.log(Date.now(), "end parse loop");
+      console.log(window.document.body);
     </script>
   </body>
 </html>
