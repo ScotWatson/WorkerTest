@@ -5,7 +5,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 import * as Main from "./main.mjs";
 import * as Message from "./message.mjs";
+console.log(window.document.body);
 import "./long_load.mjs";
+console.log(window.document.body);
 
 console.log("classic start");
 const worker1 = new Worker("worker.js");
