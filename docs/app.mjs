@@ -5,30 +5,32 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 import * as Main from "./main.mjs";
 import * as Message from "./message.mjs";
-console.log(window.document.body);
+console.log(performance.now(), window.document.body);
 import "./long_load.mjs";
-console.log(window.document.body);
+console.log(performance.now(), window.document.body);
 
-console.log("classic start");
+console.log(performance.now(), "classic start");
 const worker1 = new Worker("worker.js");
 worker1.postMessage("hello");
 worker1.addEventListener("message", (evt) => {
-  console.log("classic respond");
-  console.log(evt.data);
+  console.log(performance.now(), "classic respond");
+  console.log(performance.now(), evt.data);
 });
 worker1.addEventListener("error", (evt) => {
-  console.log("classic worker error");
-  console.log(evt);
+  console.log(performance.now(), "classic worker error");
+  console.log(performance.now(), evt);
 });
 
-console.log("module start");
+console.log(performance.now(), "module start");
 const worker2 = new Worker("worker.mjs", { type: "module" });
 worker2.postMessage("hello");
 worker2.addEventListener("message", (evt) => {
-  console.log("module respond");
-  console.log(evt.data);
+  console.log(performance.now(), "module respond");
+  console.log(performance.now(), evt.data);
 });
 worker2.addEventListener("error", (evt) => {
-  console.log("module worker error");
-  console.log(evt);
+  console.log(performance.now(), "module worker error");
+  console.log(performance.now(), evt);
 });
+
+console.log(performance.now(), "end of app.mjs");
