@@ -27,10 +27,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <script>
       console.log(Date.now(), "readyState: " + window.document.readyState);
       console.log(Date.now(), window.document.body.childNodes.length);
-      const map = window.document.getElementById("map");
-      map.addEventListener("load", () => {
-        console.log(Date.now(), "map loaded");
-      });
+//      const map = window.document.getElementById("map");
+//      map.addEventListener("load", () => {
+//        console.log(Date.now(), "map loaded");
+//      });
       window.document.addEventListener("readystatechange", (evt) => {
         console.log(Date.now(), "readyState: " + window.document.readyState);
         console.log(Date.now(), window.document.body.childNodes.length);
