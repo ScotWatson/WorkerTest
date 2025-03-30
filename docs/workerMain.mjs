@@ -4,4 +4,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 export { port } from "https://scotwatson.github.io/WebCommon/workerInit@20250326.mjs";
-export * as Imported from "./delayed.mjs";
+import "./delayed.mjs";
