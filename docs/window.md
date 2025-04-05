@@ -1,4 +1,9 @@
-When a web page loads, there are three phases: loading, interactive, and complete.
+Fatching involves the following steps:
+- Send the HTTP request to the server
+- Wait for the server to respond
+- Receive the HTTP response from the server
+
+Once a web page has been fetched, it begins loading. When a web page loads, there are three phases: loading, interactive, and complete.
 
 ## Loading
 The web page starts in the loading phase. In this phase, the parser is interpreting the HTML code. In this phase, the massage port is already open, so it is important that any windows attempting to send messages must wait before sending a message to allow the scripts for the message event handlers to execute. During parsing, some script tags pause the parser. No other tags result in pausing the parser. The types of script tags are:
@@ -8,7 +13,7 @@ The web page starts in the loading phase. In this phase, the parser is interpret
 - module (deferred) script (<script type="module">)
 - module async script (<script type="module" async>)
 
-For any script, the code must be fetched and executed. If the script is inline, then it is already fetched as part of fetching the HTML. Therefore, for inline scripts, this fetch step is skipped. For non-inline classic scripts with no qualifiers, the parser pauses while the script is fetched. For all other types of non-inline scripts, the parser continues to run while the script is fetched.
+For any script, the code must be fetched and executed. If the script is inline, then it is already fetched as part of fetching the HTML. Therefore, for inline scripts, this fetch step is skipped. Modern browsers perform pre-fetching, so the fetching of non-inline scripts begins before the parser begins building the DOM and executing scripts. For non-inline classic scripts with no qualifiers, the parser pauses until the script is received. For all other types of non-inline scripts, the parser continues to run while the script is fetched.
 
 For async scripts and classic scripts with no qualifiers, the script is executed immediately after it is fetched, regardless of whether the parser has finished or not. For deferred scripts, the script is executed once the parser is finished. These behaviors are the same regardless of whether the script is provided inline or in another file.
 
